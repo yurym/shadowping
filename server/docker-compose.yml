@@ -1,0 +1,9 @@
+version: "3.7"
+services:
+  shadowping-server:
+    build: .
+    restart: unless-stopped
+    network_mode: host
+    volumes:
+      - ./config.json:/etc/shadowsocks-rust/config.json
+      - ./pingkey.conf:/etc/pingtunnel/pingkey.conf
